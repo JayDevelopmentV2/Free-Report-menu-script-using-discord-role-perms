@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app" class="hidden">
+        <div id="playerReportUI" class="ui-container hidden">
+            <div class="report-form-container">
+                <div class="form-header">
+                    <div class="header-logo-section">
+                        <img src="nui://reportmenu/html/logo.png" class="header-logo">
+                        <h1>Submit Report</h1>
+                    </div>
+                    <button class="close-btn" onclick="sendCloseCallback()">✕</button>
+                </div>
+
+                <form id="reportForm" onsubmit="submitReport(event)">
+                    <div class="form-group">
+                        <label>Report Title</label>
+                        <input type="text" id="reportTitle" placeholder="Brief summary..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="reportDescription" placeholder="Describe the issue..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Submit Report →
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="adminReportUI" class="ui-container hidden">
+            <div class="admin-panel-container">
+                <div class="panel-header">
+                    <div class="header-content">
+                        <div class="admin-header-logo-section">
+                            <img src="nui://reportmenu/html/logo.png" class="admin-header-logo">
+                            <div>
+                                <h1>Report Management</h1>
+                                <p class="subtitle">View and manage player reports</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="close-btn" onclick="sendCloseCallback()">✕</button>
+                </div>
+
+                <div id="reportsContainer" class="reports-grid"></div>
+
+                <div id="noReports" class="no-reports hidden">
+                    <h3>No Active Reports</h3>
+                    <p>All reports have been handled</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

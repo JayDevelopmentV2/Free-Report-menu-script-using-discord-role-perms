@@ -1,0 +1,294 @@
+/* ===== GLOBAL FIX FOR FIVEM ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root,
+html,
+body,
+#app,
+.ui-container {
+    width: 100%;
+    height: 100%;
+    background: transparent !important;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+/* ===== APP WRAPPER ===== */
+#app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#app.hidden {
+    display: none;
+}
+
+/* ===== UI CONTAINER ===== */
+.ui-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== GLASS PANEL (SAFE FOR FIVEM) ===== */
+.report-form-container {
+    width: 520px;
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+
+    /* SAFE GLASS EFFECT */
+    background: rgba(20, 20, 25, 0.88);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+/* BORDER GLOW */
+.report-form-container::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 20px;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.35),
+            rgba(200, 200, 220, 0.15),
+            rgba(255, 255, 255, 0.35));
+    z-index: -1;
+}
+
+/* ===== HEADER ===== */
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-logo {
+    width: 48px;
+}
+
+.form-header h1 {
+    color: white;
+    font-size: 24px;
+}
+
+/* ===== BUTTONS ===== */
+.close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ===== FORM ===== */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+}/* ===== ADMIN PANEL STYLES ===== */
+.admin-panel-container {
+    width: 90vw;
+    max-width: 1400px;
+    height: 85vh;
+    padding: 36px;
+    border-radius: 20px;
+    position: relative;
+    background: rgba(20, 20, 25, 0.88);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-header-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.admin-header-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.header-content h1 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 16px;
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.reports-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.reports-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.reports-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.report-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.report-header {
+    margin-bottom: 12px;
+}
+
+.report-id {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.report-player {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.report-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.report-description {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    margin-bottom: 10px;
+    max-height: 50px;
+    overflow-y: auto;
+}
+
+.report-timestamp {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+.report-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.close-report-btn {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.no-reports {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.no-reports h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.no-reports p {
+    font-size: 14px;
+}
+
+.hidden {
+    display: none !important;
+}
